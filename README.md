@@ -6,3 +6,5 @@
 4. Filtteröi oikean päivän voittonumeron.
 5. Tulostaa voittonumeron logiin.
 
+# Telegram-kanava jossa klo 8:00 uusin numero
+t.me/sepsinkalenteri2022
