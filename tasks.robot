@@ -2,6 +2,8 @@
 Documentation       Sepsi joulkalenterinumerot
 Library             RPA.Browser.Selenium
 Library             String
+Library             RPA.Notifier
+Library             RPA.Robocorp.Vault
 
 *** Variables ***
 ${URL}=         https://www.sepsi78.net/uutiset/131675/joulukalenteriarpa-2022
@@ -25,8 +27,10 @@ Ota kuvankaappaus
     Capture Element Screenshot    	${xpathtoobj}   voittotaulukko-${time}.png
 
 Ota taulukko
+    ${secret}=    Get Secret    telegram
     ${osio missa numerot} =    Get Text    ${xpathtoobj}
     ${voittorivi} =	Get Lines Containing String    ${osio missa numerot}	${time}
     Log    ${voittorivi}    console=yes
     ${viimeisinvoittonumero} =  Get Regexp Matches      ${voittorivi}     [0-9]+\.12\..+?([0-9][0-9][0-9][0-9]).+    1
+    Notify Telegram    ${voittorivi}    ${secret}[chid]    ${secret}[apikey]
     [Return]    ${viimeisinvoittonumero}
