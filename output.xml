@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0.1 (Python 3.9.13 on win32)" generated="20221202 12:22:37.352" rpa="true" schemaversion="3">
+<suite id="s1" name="Tasks" source="c:\WORK\joulukalenteri\funny-business\sepsi_joulukalenteri_robot\tasks.robot">
+<test id="s1-t1" name="Hae ne voittonumerot" line="14">
+<kw name="Avaa nettiselain">
+<kw name="Open Available Browser" library="RPA.Browser.Selenium">
+<arg>${URL}</arg>
+<doc>Attempts to open a browser on the user's device from a set of
+supported browsers. Automatically downloads a corresponding webdriver
+if none is already installed.</doc>
+<msg timestamp="20221202 12:22:37.919" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<msg timestamp="20221202 12:22:37.923" level="INFO">====== WebDriver manager ======</msg>
+<msg timestamp="20221202 12:22:38.962" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<msg timestamp="20221202 12:22:41.488" level="INFO">Creating an instance of the Firefox WebDriver.</msg>
+<msg timestamp="20221202 12:22:41.491" level="INFO">====== WebDriver manager ======</msg>
+<msg timestamp="20221202 12:22:42.649" level="INFO">Creating an instance of the Firefox WebDriver.</msg>
+<msg timestamp="20221202 12:22:45.656" level="INFO">Creating an instance of the ChromiumEdge WebDriver.</msg>
+<msg timestamp="20221202 12:22:45.657" level="INFO">====== WebDriver manager ======</msg>
+<msg timestamp="20221202 12:22:46.930" level="INFO">Creating an instance of the ChromiumEdge WebDriver.</msg>
+<msg timestamp="20221202 12:22:47.923" level="INFO">Created ChromiumEdge browser with arguments: </msg>
+<msg timestamp="20221202 12:22:47.923" level="INFO" html="true">&lt;p&gt;Attempted combinations:&lt;/p&gt;&lt;div class="doc"&gt;&lt;table&gt;&lt;tr&gt;&lt;th&gt;Browser&lt;/th&gt;&lt;th&gt;Download&lt;/th&gt;&lt;th&gt;Error&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Chrome&lt;/td&gt;&lt;td&gt;False&lt;/td&gt;&lt;td&gt;Message: 'chromedriver' executable needs to be in PATH. Please see https://chromedriver.chromium.org/home
+&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Chrome&lt;/td&gt;&lt;td&gt;True&lt;/td&gt;&lt;td&gt;Message: unknown error: cannot find Chrome binary
+Stacktrace:
+Backtrace:
+	(No symbol) [0x0042F243]
+	(No symbol) [0x003B7FD1]
+	(No symbol) [0x002AD04D]
+	(No symbol) [0x002CA063]
+	(No symbol) [0x002C82E9]
+	(No symbol) [0x002FF056]
+	(No symbol) [0x002FEB2A]
+	(No symbol) [0x002F8386]
+	(No symbol) [0x002D163C]
+	(No symbol) [0x002D269D]
+	GetHandleVerifier [0x006C9A22+2655074]
+	GetHandleVerifier [0x006BCA24+2601828]
+	GetHandleVerifier [0x004D8C0A+619850]
+	GetHandleVerifier [0x004D7830+614768]
+	(No symbol) [0x003C05FC]
+	(No symbol) [0x003C5968]
+	(No symbol) [0x003C5A55]
+	(No symbol) [0x003D051B]
+	BaseThreadInitThunk [0x75D66939+25]
+	RtlGetFullPathName_UEx [0x77508FD2+1218]
+	RtlGetFullPathName_UEx [0x77508F9D+1165]
+&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Firefox&lt;/td&gt;&lt;td&gt;False&lt;/td&gt;&lt;td&gt;Message: 'geckodriver' executable needs to be in PATH. 
+&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Firefox&lt;/td&gt;&lt;td&gt;True&lt;/td&gt;&lt;td&gt;Message: Expected browser binary location, but unable to find binary in default location, no 'moz:firefoxOptions.binary' capability provided, and no binary flag set on the command line
+&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;ChromiumEdge&lt;/td&gt;&lt;td&gt;False&lt;/td&gt;&lt;td&gt;Message: 'msedgedriver' executable needs to be in PATH. Please download from https://developer.microsoft.com/en-us/microsoft-edge/tools/webdriver/
+&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;ChromiumEdge&lt;/td&gt;&lt;td&gt;True&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;</msg>
+<msg timestamp="20221202 12:22:47.933" level="INFO">Opening url 'https://www.sepsi78.net/uutiset/131675/joulukalenteriarpa-2022'</msg>
+<status status="PASS" starttime="20221202 12:22:37.919" endtime="20221202 12:22:48.431"/>
+</kw>
+<status status="PASS" starttime="20221202 12:22:37.918" endtime="20221202 12:22:48.431"/>
+</kw>
+<kw name="Ota kuvankaappaus">
+<kw name="Capture Element Screenshot" library="RPA.Browser.Selenium">
+<arg>xpath://*[@id="page-content"]/div/div/div[1]/div[1]/div[2]</arg>
+<arg>voittotaulukko-${time}.png</arg>
+<doc>Captures a screenshot from the element identified by ``locator`` and embeds it into log file.</doc>
+<msg timestamp="20221202 12:22:48.589" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="voittotaulukko-2.12.png"&gt;&lt;img src="voittotaulukko-2.12.png" width="400px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20221202 12:22:48.432" endtime="20221202 12:22:48.590"/>
+</kw>
+<status status="PASS" starttime="20221202 12:22:48.431" endtime="20221202 12:22:48.590"/>
+</kw>
+<kw name="Ota taulukko">
+<var>${voittonumero}</var>
+<kw name="Get Text" library="RPA.Browser.Selenium">
+<var>${osio missa numerot}</var>
+<arg>xpath://*[@id="page-content"]/div/div/div[1]/div[1]/div[2]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20221202 12:22:48.608" level="INFO">${osio missa numerot} = VOITTONUMEROT:
+1.12. voittonumero: 1640. Sivuvoitot: -1: 1639 ja +1: 1641
+2.12. voittonumero: 1751. Sivuvoitot: -1: 1750 ja +1: 1752.</msg>
+<status status="PASS" starttime="20221202 12:22:48.592" endtime="20221202 12:22:48.608"/>
+</kw>
+<kw name="Get Lines Containing String" library="String">
+<var>${viimeisin voittonumero}</var>
+<arg>${osio missa numerot}</arg>
+<arg>${time}</arg>
+<doc>Returns lines of the given ``string`` that contain the ``pattern``.</doc>
+<msg timestamp="20221202 12:22:48.609" level="INFO">1 out of 3 lines matched</msg>
+<msg timestamp="20221202 12:22:48.609" level="INFO">${viimeisin voittonumero} = 2.12. voittonumero: 1751. Sivuvoitot: -1: 1750 ja +1: 1752.</msg>
+<status status="PASS" starttime="20221202 12:22:48.608" endtime="20221202 12:22:48.609"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${viimeisin voittonumero}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20221202 12:22:48.609" level="INFO">2.12. voittonumero: 1751. Sivuvoitot: -1: 1750 ja +1: 1752.</msg>
+<status status="PASS" starttime="20221202 12:22:48.609" endtime="20221202 12:22:48.610"/>
+</kw>
+<kw name="Get Regexp Matches" library="String">
+<var>${one group}</var>
+<arg>${viimeisin voittonumero}</arg>
+<arg>t[0-9]?[0-9].12.+voittonumero:\s?([0-9][0-9][0-9][0-9]).+</arg>
+<arg>1</arg>
+<doc>Returns a list of all non-overlapping matches in the given string.</doc>
+<msg timestamp="20221202 12:22:48.610" level="INFO">${one group} = []</msg>
+<status status="PASS" starttime="20221202 12:22:48.610" endtime="20221202 12:22:48.610"/>
+</kw>
+<msg timestamp="20221202 12:22:48.610" level="INFO">${voittonumero} = []</msg>
+<status status="PASS" starttime="20221202 12:22:48.590" endtime="20221202 12:22:48.610"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${voittonumero}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20221202 12:22:48.610" level="INFO">[]</msg>
+<status status="PASS" starttime="20221202 12:22:48.610" endtime="20221202 12:22:48.611"/>
+</kw>
+<status status="PASS" starttime="20221202 12:22:37.917" endtime="20221202 12:22:48.612"/>
+</test>
+<doc>Sepsi joulkalenterinumerot</doc>
+<status status="PASS" starttime="20221202 12:22:37.358" endtime="20221202 12:22:48.614"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tasks</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Tasks">Tasks</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
