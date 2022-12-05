@@ -46,6 +46,6 @@ Laheta telegram viesti
 
 Poimi voittonumero
     [Arguments]    ${voittorivi}
-    ${viimeisinvoittonumero}=    Get Regexp Matches      ${voittorivi}     \d{1,2}\.12\..+?(\d{1,4}).+    1
-    [Return]    ${viimeisinvoittonumero}
+    ${viimeisinvoittonumero}=    Get Regexp Matches      ${voittorivi}     \\d{1,2}\.12\..+?(\\d{1,4}).+    1
+    [Return]    ${viimeisinvoittonumero}[0]
 
