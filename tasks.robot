@@ -30,7 +30,7 @@ Avaa nettiselain
     Open Available Browser    ${URL}
 
 Ota kuvankaappaus
-    Capture Element Screenshot    	${xpathtoobj}   voittotaulukko-${time}.png
+    Capture Element Screenshot    	${xpathtoobj}   ${OUTPUT_DIR}${/}voittotaulukko-${time}.png
 
 Ota voittorivi
     ${osio missa numerot} =    Get Text    ${xpathtoobj}
