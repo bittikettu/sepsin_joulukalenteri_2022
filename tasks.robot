@@ -16,7 +16,13 @@ ${xpathtoobj} =    xpath://*[@id="page-content"]/div/div/div[1]/div[1]/div[2]
 Hae ne voittonumerot
     Avaa nettiselain
     Ota kuvankaappaus
-    ${voittonumero}=    Ota taulukko
+    TRY
+        ${voittorivi}=    Ota voittorivi
+    EXCEPT    Paivan numero ei julkinen
+        Fail    Päivän numeroa ei ole vielä arvottu
+    END
+    Laheta telegram viesti    ${voittorivi}
+    ${voittonumero}=    Poimi voittonumero    ${voittorivi}
     Log    ${voittonumero}    console=yes
 
 *** Keywords ***
@@ -26,11 +32,20 @@ Avaa nettiselain
 Ota kuvankaappaus
     Capture Element Screenshot    	${xpathtoobj}   voittotaulukko-${time}.png
 
-Ota taulukko
-    ${secret}=    Get Secret    telegram
+Ota voittorivi
     ${osio missa numerot} =    Get Text    ${xpathtoobj}
-    ${voittorivi} =	Get Lines Containing String    ${osio missa numerot}	${time}
+    ${voittorivi}=     Get Lines Containing String    ${osio missa numerot}    ${time}
+    Should Not Be Empty    ${voittorivi}    msg=Paivan numero ei julkinen
     Log    ${voittorivi}    console=yes
-    ${viimeisinvoittonumero} =  Get Regexp Matches      ${voittorivi}     [0-9]+\.12\..+?([0-9][0-9][0-9][0-9]).+    1
+    [Return]    ${voittorivi}
+
+Laheta telegram viesti
+    [Arguments]    ${voittorivi}
+    ${secret}=    Get Secret    telegram
     Notify Telegram    ${voittorivi}    ${secret}[chid]    ${secret}[apikey]
+
+Poimi voittonumero
+    [Arguments]    ${voittorivi}
+    ${viimeisinvoittonumero}=    Get Regexp Matches      ${voittorivi}     \d{1,2}\.12\..+?(\d{1,4}).+    1
     [Return]    ${viimeisinvoittonumero}
+
