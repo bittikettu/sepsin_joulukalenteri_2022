@@ -6,7 +6,7 @@ Library             RPA.Notifier
 Library             RPA.Robocorp.Vault
 
 *** Variables ***
-${URL}=         https://www.sepsi78.net/uutiset/131675/joulukalenteriarpa-2022
+${URL}=         https://www.sepsi78.net/uutiset/142845/2024-joulukalenteriarvan-voittonumerot
 
 # Current date form at to 2.12 
 ${time} =       ${{ datetime.datetime.now().strftime("%d.%m").replace("0", "") }}
